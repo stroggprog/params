@@ -52,3 +52,5 @@ $keys = $params->listKeys(); // get a list of the keys from the internal array
 $masked = $params->maskedKeys(); // returns a list of $_GET and $_POST variables masked by values in the internal array
 ```
 You can use the `unset()` method to unmask a masked variable. This only ever affects the internal array.
+
+Passing the params object around makes it a handy repository for 'global' variables.
