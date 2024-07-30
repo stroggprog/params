@@ -36,7 +36,6 @@ $v3 = $_GET["variable1"]; // value = "Example"
 // add a variable that doesn't exist in $_GET or $_POST arrays:
 $params->myVar = new Date();
 ```
-
 As you can see, it is perfectly legal to add a new variable, and you can also change a variable type. For example, you may have a $_GET variable named 'date' which contains the string `2024-07-30`. You can do this:
 ```
 $params->date = new DateTime( $params->date );
