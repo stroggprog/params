@@ -1,11 +1,9 @@
 <?php
 class parameters extends randomAccess {
-
 	function __construct(){
 		parent::__construct();
 		$this->params = $_POST;
 	}
-
 }
 
 class randomAccess {
@@ -54,6 +52,4 @@ class randomAccess {
 		return $mask;
 	}
 }
-
-
 ?>
