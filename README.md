@@ -2,7 +2,7 @@
 This is a simple PHP class for accessing GET and POST parameters, allowing values to be overridden without overwriting them (allowing the original values to be recovered).
 
 In practice, it works like this:
-```
+```php
 include_once("params.php");
 
 $params = new parameters();
@@ -22,7 +22,7 @@ When fetching values, the order of precedence is:
   - $_GET
 
 Consider the following:
-```
+```php
 // $_GET["variable1"] has the value "Example"
 //
 $v1 = $params->variable1; // value = "Example"
@@ -37,13 +37,13 @@ $v3 = $_GET["variable1"]; // value = "Example"
 $params->myVar = new Date();
 ```
 As you can see, it is perfectly legal to add a new variable, and you can also change a variable type. For example, you may have a $_GET variable named 'date' which contains the string `2024-07-30`. You can do this:
-```
+```php
 $params->date = new DateTime( $params->date );
 ```
 In this case, it _fetches_ the date string from the $_GET (or $_POST) variable, uses it to create a `DateTime` object and stores that in the internal array. The original value is still available at `$_GET['date']`, but subsequent calls to `$params->date` will return the object.
 
 There are some support methods available:
-```
+```php
 $params->unset( "name" ); // deletes variable 'name' from internal array ($_GET and $_POST are preserved)
 
 $keys = $params->listKeys(); // get a list of the keys from the internal array
